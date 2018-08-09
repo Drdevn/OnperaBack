@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const User = require('../models/user');
+const Page = require('../models/page');
 const db = "mongodb://drdevn:asd12345@ds161316.mlab.com:61316/onpback";
 
 mongoose.connect(db, err => {
@@ -78,16 +79,6 @@ router.get('/getAllUsers', (req, res) => {
     })
 });
 
-router.get('/user/:id', (req, res) => {
-  User.findById(req.params.id)
-    .then(users => {
-      if (!users) {
-        return res.status(404).end();
-      }
-      console.log(req);
-      return res.status(200).json(users);
-    })
-    .catch(err => console.log(err));
-});
+
 
 module.exports = router;
