@@ -68,16 +68,6 @@ router.post('/login', (req, res) => {
 });
 
 
-router.get('/getAllUsers', (req, res) => {
-  User.find({})
-    .exec((err, users) => {
-      if (err) {
-        console.log(error);
-      } else {
-        res.json(users)
-      }
-    })
-});
 
 
 
