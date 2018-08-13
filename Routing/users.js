@@ -36,5 +36,25 @@ router.get('/getAllUsers', (req, res) => {
     })
 });
 
+router.put('/update/:id', (req, res) => {
+  console.log(req.body);
+  User.findByIdAndUpdate(req.params.id, req.body
+
+    , {
+      new: true
+    },
+    (err, updatedUser) => {
+      if (err) {
+        res.send("Error")
+
+      } else {
+        res.send(updatedUser);
+        console.log(req)
+      }
+    }
+  )
+});
+
+
 
 module.exports = router;

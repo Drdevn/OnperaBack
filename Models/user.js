@@ -9,6 +9,7 @@ const userSchema = new Schema({
   position: String,
   phone: String,
   email: String,
+  isActive: Boolean,
   Project: [{projectname: String, userposition: String}]
 
 });
