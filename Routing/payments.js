@@ -24,6 +24,16 @@ router.post('/addpayment', (req, res) => {
   })
 });
 
+router.get('/getAllPayments', (req, res) => {
+  Payment.find({})
+    .exec((err, payments) => {
+      if (err) {
+        console.log(error);
+      } else {
+        res.json(payments)
+      }
+    })
+});
 
 
 
