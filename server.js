@@ -7,10 +7,12 @@ const PORT = 3000;
 const api = require('./Routing/api');
 const users = require('./Routing/users');
 const pages = require('./Routing/pages');
+const payments = require('./Routing/payments');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use('/payments', payments);
 app.use('/api', api);
 app.use('/users', users);
 app.use('/pages', pages);
