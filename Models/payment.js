@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const paymentSchema = new Schema({
 
-  date: Date,
-  transactions: String,
+  postdate: Date,
+  transactions: Number,
+  transdate: Date,
+  isActive: Boolean,
   amount: String
 
 
