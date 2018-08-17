@@ -6,6 +6,7 @@ const paymentSchema = new Schema({
   postdate: Date,
   transactions: Number,
   transdate: Date,
+  description: String,
   isActive: Boolean,
   amount: String
 

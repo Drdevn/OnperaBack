@@ -36,5 +36,25 @@ router.get('/getAllPayments', (req, res) => {
 });
 
 
+router.put('/update/:id', (req, res) => {
+  console.log(req.body);
+  Payment.findByIdAndUpdate(req.params.id, req.body
+
+    , {
+      new: true
+    },
+    (err, updatedPayment) => {
+      if (err) {
+        res.send("Error")
+
+      } else {
+        res.send(updatedPayment);
+        console.log(req)
+      }
+    }
+  )
+});
+
+
 
 module.exports = router;
