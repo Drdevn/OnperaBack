@@ -5,10 +5,10 @@ const helmet = require('helmet');
 const cors = require('cors');
 
 const PORT = 3000;
-const api = require('./Routing/api');
-const users = require('./Routing/users');
-const pages = require('./Routing/pages');
-const payments = require('./Routing/payments');
+const api = require('./routing/api');
+const users = require('./routing/users');
+const pages = require('./routing/pages');
+const payments = require('./routing/payments');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
