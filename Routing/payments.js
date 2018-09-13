@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Payment = require('../Models/payment');
+const Payment = require('../models/payment');
 const db = "mongodb://drdevn:asd12345@ds161316.mlab.com:61316/onpback";
 
 
