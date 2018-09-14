@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const db = "mongodb://drdevn:asd12345@ds161316.mlab.com:61316/onpback";
+const requestIp = require('request-ip');
+
 
 mongoose.connect(db, err => {
   if (err) {
@@ -27,6 +29,13 @@ function verifyToken(req, res, next) {
   }
   req.userId = payload.subject
 }
+
+//  function sayBoi(req, res, next) {
+//   const clientIp = requestIp.getClientIp(req);
+//   console.log(clientIp);
+//   next();
+//   console.log(clientIp);
+// }
 
 router.get('/', (req, res) => {
   res.send('From API')
@@ -60,7 +69,8 @@ router.post('/login', (req, res) => {
       } else {
         let payload = {subject: user.id};
         let token = jwt.sign(payload, 'secretKey');
-        res.status(200).send({token})
+        res.status(200).send({token});
+        // sayBoi();
       }
     }
   })
