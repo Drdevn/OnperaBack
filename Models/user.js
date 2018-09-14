@@ -17,17 +17,19 @@ const userSchema = new Schema({
       userposition: String
     }
     ],
-  avatar: File,
-  dayOf: [{
-    publDate: Date,
-    log: String,
-    startDate: Date,
-    endDate: Date,
-    vacDayOff: Boolean,
-    reason: String,
-    proof: File,
-    status: String
-  }]
+  // avatar: File,
+  dayOf: [
+      {
+      publDate: Date,
+      log: String,
+      startDate: Date,
+      endDate: Date,
+      vacDayOff: Number,
+      reason: String,
+      // proof: File,
+      status: String
+    }
+  ]
 
 });
 module.exports = mongoose.model('user', userSchema, 'users');
