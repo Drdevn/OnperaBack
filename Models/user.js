@@ -11,9 +11,14 @@ const userSchema = new Schema({
   email: String,
   salary: String,
   isActive: Boolean,
-  project: [{projectname: String, userposition: String}],
+  project: [
+    {
+      projectname: String,
+      userposition: String
+    }
+    ],
   avatar: File,
-  dayOf: {
+  dayOf: [{
     publDate: Date,
     log: String,
     startDate: Date,
@@ -22,7 +27,7 @@ const userSchema = new Schema({
     reason: String,
     proof: File,
     status: String
-  }
+  }]
 
 });
 module.exports = mongoose.model('user', userSchema, 'users');
