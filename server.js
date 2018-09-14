@@ -17,14 +17,14 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(helmet());
-app.use(requestIp.mw({ attributeName : 'myCustomAttributeName' }));
-
-app.use(function(req, res) {
-  const ip = req.myCustomAttributeName;
-  console.log(ip);
-  let ipType = net.isIP(ip);
-  console.log('Hello, your ip address is ' + ip + ' and is of type IPv' + ipType + '\n');
-});
+// app.use(requestIp.mw({ attributeName : 'myCustomAttributeName' }));
+//
+// app.use(function(req, res) {
+//   const ip = req.myCustomAttributeName;
+//   console.log(ip);
+//   let ipType = net.isIP(ip);
+//   console.log('Hello, your ip address is ' + ip + ' and is of type IPv' + ipType + '\n');
+// });
 
 app.use('/payments', payments);
 app.use('/api', api);
