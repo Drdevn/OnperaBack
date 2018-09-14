@@ -24,7 +24,7 @@ const userSchema = new Schema({
       log: String,
       startDate: Date,
       endDate: Date,
-      vacDayOff: Number,
+      vacDayOff: String,
       reason: String,
       // proof: File,
       status: String
