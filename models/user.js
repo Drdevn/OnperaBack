@@ -22,9 +22,8 @@ const userSchema = new Schema({
       {
       publDate: Date,
       log: String,
-      startDate: Date,
-      endDate: Date,
-      vacDayOff: String,
+      period:[Date],
+      typeOff: String,
       reason: String,
       // proof: File,
       status: String
