@@ -36,6 +36,17 @@ router.get('/getAllUsers', (req, res) => {
     })
 });
 
+router.get('/getDayOff', (req, res) => {
+  User.find({$elemMatch: {status:  "waiting"}})
+    .exec((err, users) => {
+      if (err) {
+        throw err;
+      } else {
+        res.json(users)
+      }
+    })
+});
+
 router.put('/update/:id', (req, res) => {
   console.log(req.body);
   User.findByIdAndUpdate(req.params.id, req.body
