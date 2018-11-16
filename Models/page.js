@@ -8,7 +8,9 @@ const pageSchema = new Schema({
   isActive: Boolean,
   childOf: String,
   hasChild: [String],
-  pageContent: [{text: String, position:String, isActive: String}]
+  pageContent: [
+    {text: String, position:String, isActive: String}
+    ]
 
 });
 module.exports = mongoose.model('page', pageSchema, 'pages');
