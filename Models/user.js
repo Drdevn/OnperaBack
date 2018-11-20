@@ -26,8 +26,9 @@ const userSchema = new Schema({
       endDate: Date,
       vacDayOff: String,
       reason: String,
-      // proof: File,
-      status: String
+      status: String,
+      pending: Boolean,
+      declined: Boolean
     }
   ]
 

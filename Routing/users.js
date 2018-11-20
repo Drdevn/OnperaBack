@@ -47,6 +47,18 @@ router.get('/getDayOff', (req, res) => {
     })
 });
 
+router.post('/postDayOff', (req, res) => {
+  let dayOff = req.body;
+  let user = new User(dayOff);
+  user.save((error, dayOff) =>{
+    if (error) {
+      console.log(error);
+    } else {
+      res.status(200).send(dayOff)
+    }
+  })
+});
+
 router.put('/update/:id', (req, res) => {
   console.log(req.body);
   User.findByIdAndUpdate(req.params.id, req.body
