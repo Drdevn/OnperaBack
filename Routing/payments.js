@@ -40,7 +40,6 @@ router.get('/getAllPayments', (req, res) => {
 router.put('/update/:id', (req, res) => {
   console.log(req.body);
   Payment.findByIdAndUpdate(req.params.id, req.body
-
     , {
       new: true
     },

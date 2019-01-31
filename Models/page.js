@@ -9,7 +9,7 @@ const pageSchema = new Schema({
   childOf: String,
   hasChild: [String],
   pageContent: [
-    {text: String, position:String, isActive: String}
+    {text: String, position:String, isActive: Boolean}
     ]
 
 });

@@ -10,6 +10,7 @@ const userSchema = new Schema({
   phone: String,
   email: String,
   salary: String,
+  gender: String,
   isActive: Boolean,
   project: [
     {
